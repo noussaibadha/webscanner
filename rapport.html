@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Rapport de sécurité</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; }
+  h1 { color: #0f6e56; border-bottom: 2px solid #0f6e56; padding-bottom: 10px; }
+  h2 { color: #333; margin-top: 30px; }
+  .meta { color: #666; font-size: 14px; margin-bottom: 30px; }
+  .stats { display: flex; gap: 20px; margin: 20px 0; }
+  .stat { padding: 15px 25px; border-radius: 8px; text-align: center; }
+  .stat .num { font-size: 28px; font-weight: bold; }
+  .stat .label { font-size: 13px; margin-top: 4px; }
+  .stat.rouge { background: #fcebeb; color: #791f1f; }
+  .stat.orange { background: #faeeda; color: #633806; }
+  .stat.vert { background: #eaf3de; color: #27500a; }
+  table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+  th { background: #0f6e56; color: white; padding: 10px 14px; text-align: left; }
+  td { padding: 9px 14px; border-bottom: 1px solid #eee; font-size: 14px; }
+  tr:hover { background: #f9f9f9; }
+  .haute { background: #fcebeb; color: #791f1f; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+  .moyenne { background: #faeeda; color: #633806; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+  .faible { background: #eaf3de; color: #27500a; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+  code { background: #f4f4f4; padding: 2px 7px; border-radius: 4px; font-size: 13px; }
+  .footer { margin-top: 40px; color: #999; font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+  <h1>Rapport de sécurité</h1>
+  <p class="meta">
+    URL analysée : <strong>https://www.noussaiba-dhaou.fr/</strong><br>
+    Date : 09/04/2026 à 23:50
+  </p>
+
+  <div class="stats">
+    <div class="stat rouge">
+      <div class="num">0</div>
+      <div class="label">XSS potentiels</div>
+    </div>
+    <div class="stat rouge">
+      <div class="num">0</div>
+      <div class="label">SQLi potentielles</div>
+    </div>
+    <div class="stat orange">
+      <div class="num">5</div>
+      <div class="label">Headers manquants</div>
+    </div>
+    <div class="stat vert">
+      <div class="num">5</div>
+      <div class="label">Total vulnérabilités</div>
+    </div>
+  </div>
+
+  
+  <h2>Headers de sécurité manquants</h2>
+  <table>
+    <tr><th>Header</th><th>Criticité</th><th>Description</th></tr>
+    
+    <tr>
+      <td><code>Content-Security-Policy</code></td>
+      <td><span class="haute">HAUTE</span></td>
+      <td>Protège contre les attaques XSS</td>
+    </tr>
+    
+    <tr>
+      <td><code>X-Frame-Options</code></td>
+      <td><span class="moyenne">MOYENNE</span></td>
+      <td>Protège contre le clickjacking</td>
+    </tr>
+    
+    <tr>
+      <td><code>Strict-Transport-Security</code></td>
+      <td><span class="haute">HAUTE</span></td>
+      <td>Force HTTPS (HSTS)</td>
+    </tr>
+    
+    <tr>
+      <td><code>Referrer-Policy</code></td>
+      <td><span class="faible">FAIBLE</span></td>
+      <td>Contrôle les infos envoyées au referrer</td>
+    </tr>
+    
+    <tr>
+      <td><code>Permissions-Policy</code></td>
+      <td><span class="faible">FAIBLE</span></td>
+      <td>Restreint l'accès aux APIs du navigateur</td>
+    </tr>
+    
+  </table>
+  
+
+  
+
+  
+
+  <div class="footer">Noussaiba Dhaou</div>
+</body>
+</html>
